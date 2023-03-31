@@ -9,10 +9,15 @@ function App() {
   function diffArray(arr1, arry2) {
     return arr1
       .concat(arry2)
-      .filter((item) => arr1.includes(item) || arry2.includes(item));
+      .filter((item) => !arr1.includes(item) || !arry2.includes(item));
   }
 
-  console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+  console.log(
+    diffArray(
+      ["grass", "dirt", "pink wool", "dead shrub"],
+      ["grass", "dirt", "dead shrub"]
+    )
+  );
 
   return (
     <div className="App">
